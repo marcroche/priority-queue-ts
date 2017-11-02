@@ -1,3 +1,10 @@
+# Build Files
+src/**/*.js
+src/**/*.map
+test/**/*.js
+test/**/*.js.map
+dist/
+
 # Logs
 logs
 *.log
