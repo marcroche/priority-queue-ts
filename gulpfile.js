@@ -59,3 +59,5 @@ gulp.task('unit', function(){
             require: ['ts-node/register']
         }));
   });
+
+gulp.task('default', ['tsc']);
