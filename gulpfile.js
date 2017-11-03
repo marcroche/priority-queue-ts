@@ -6,12 +6,11 @@ let del = require('del');
 let sourcemaps = require('gulp-sourcemaps');
 let path = require('path');
 let mocha = require('gulp-mocha');
-
 let tsConfig = require('./tsconfig.json');
+
 let paths = {
   dist: 'dist/',
 };
-
 
 gulp.task('clean', () => {
 	return del([
