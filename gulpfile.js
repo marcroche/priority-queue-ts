@@ -6,13 +6,6 @@ let del = require('del');
 let sourcemaps = require('gulp-sourcemaps');
 let path = require('path');
 let mocha = require('gulp-mocha');
-/* let resolve = require('rollup-plugin-node-resolve');
-let Server = require('karma').Server;
-let argv = require('yargs').argv;
-let fs = require('fs');
-let merge = require('merge-stream');
-let exec = require('child_process').exec;
-*/
 
 let tsConfig = require('./tsconfig.json');
 let paths = {
