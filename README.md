@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/marcroche/priority-queue-ts.svg?branch=master)](https://travis-ci.org/marcroche/priority-queue-ts)
+
 # priority-queue-ts
 
 A simple priority queue data structure for Node.js and the browser written in TypeScript.
