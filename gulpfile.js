@@ -21,7 +21,7 @@ gulp.task('clean', () => {
 	});
 });
 
-gulp.task('typescript', ['tslint', 'clean'], () => { //, 'unit'
+gulp.task('tsc', ['tslint', 'clean', 'unit'], () => {
   return gulp.src([
     'src/**/*.ts',
     '!src/**/*.spec.ts'
@@ -32,15 +32,15 @@ gulp.task('typescript', ['tslint', 'clean'], () => { //, 'unit'
     .pipe(gulp.dest(path.join(paths.dist, '')));
 });
 
-gulp.task('typescript-no-unit', ['tslint', 'clean'], () => {
+gulp.task('tsc-no-unit', ['tslint', 'clean'], () => {
   return gulp.src([
-    'app/**/*.ts',
-    '!app/**/*.spec.ts'
+    'src/**/*.ts',
+    '!src/**/*.spec.ts'
   ])
     .pipe(sourcemaps.init())
     .pipe(typescript(tsConfig.compilerOptions)).js
     .pipe(sourcemaps.write('maps'))
-    .pipe(gulp.dest(path.join(paths.dist, 'app')));
+    .pipe(gulp.dest(path.join(paths.dist, '')));
 });
 
 gulp.task('tslint', ['clean'], () => {
@@ -60,18 +60,3 @@ gulp.task('unit', function(){
             require: ['ts-node/register']
         }));
   });
-  
-
-// gulp.task('unit', ['tslint'], (done) => {
-//   new Server({
-//     configFile: path.join(__dirname, 'karma.conf.js'),
-//     // enable / disable watching file and executing tests whenever any file changes
-//     autoWatch: false,
-//     // start these browsers
-//     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-//     browsers: ['ChromeHeadless'],
-//     // Continuous Integration mode
-//     // if true, Karma captures browsers, runs the tests and exits
-//     singleRun: true,
-//   }, done).start();
-// });
