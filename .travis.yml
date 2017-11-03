@@ -3,8 +3,8 @@ node_js:
   - "iojs"
   - "7"
 before_script:
-  - npm install
   - npm install -g gulp-cli
+  - npm install
 script: gulp
 cache:
   directories:
