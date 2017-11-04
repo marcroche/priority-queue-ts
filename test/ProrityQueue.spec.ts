@@ -40,4 +40,12 @@ describe('PriorityQueue', () => {
         pop = result.pop();
         expect(pop.value).to.equal(5);
     });
+
+    it('should peek top item', () => {
+        const result = new PriorityQueue(testData.queueItemArray);
+        let peek = result.peek();
+        expect(peek.value).to.equal(1);
+        peek = result.peek();
+        expect(peek.value).to.equal(1);
+    });
 });
