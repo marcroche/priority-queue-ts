@@ -3,7 +3,7 @@ node_js:
   - "7"
 before_script:
   - npm install -g gulp-cli
-script: gulp
+script: nyc mocha
 after_script: "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
 cache:
   directories:
