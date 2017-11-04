@@ -57,9 +57,16 @@ describe('PriorityQueue', () => {
         result.push(new QueueItem(obj5.value, obj5));
         let peek = result.peek();
         expect(peek.value).to.equal(5);
-        
+
         result.push(new QueueItem(obj1.value, obj1));
         peek = result.peek();
         expect(peek.value).to.equal(1);
+    });
+
+    it('should clear queue', () => {
+        const result = new PriorityQueue(testData.getQueueItemArray());
+        expect(result.isEmpty()).to.equal(false);
+        result.clear();
+        expect(result.isEmpty()).to.equal(true);
     });
 });
