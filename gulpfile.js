@@ -55,13 +55,13 @@ gulp.task('tslint', ['clean'], () => {
         .pipe(gulpTsLint.report());
 });
 
-gulp.task('unit', ['pre-unit'], function () {
+gulp.task('unit', function () {
     return gulp.src('test/*.spec.ts')
         .pipe(mocha({
             reporter: 'nyan',
             require: ['ts-node/register']
-        }))
-        .pipe(istanbul.writeReports());
+        }));
+        // .pipe(istanbul.writeReports());
 });
 
 gulp.task('pre-unit', function () {

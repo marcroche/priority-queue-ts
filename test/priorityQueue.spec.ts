@@ -1,6 +1,6 @@
 import { PriorityQueue } from '../src/PriorityQueue';
 import { QueueItem } from '../src/queueItem';
-import * as testData from './data';
+import * as testData from './testData';
 import { expect } from 'chai';
 import 'mocha';
 
@@ -11,7 +11,7 @@ describe('PriorityQueue', () => {
     });
 
     it('should not be empty when creating with array', () => {
-        const result = new PriorityQueue(testData.queueItemArray);
+        const result = new PriorityQueue(testData.getQueueItemArray());
         expect(result.isEmpty()).to.equal(false);
     });
 
@@ -21,14 +21,14 @@ describe('PriorityQueue', () => {
     });
 
     it('should clear items', () => {
-        const result = new PriorityQueue(testData.queueItemArray);
+        const result = new PriorityQueue(testData.getQueueItemArray());
         expect(result.isEmpty()).to.equal(false);
         result.clear();
         expect(result.isEmpty()).to.equal(true);
     });
 
     it('should pop items', () => {
-        const result = new PriorityQueue(testData.queueItemArray);
+        const result = new PriorityQueue(testData.getQueueItemArray());
         let pop = result.pop();
         expect(pop.value).to.equal(1);
         pop = result.pop();
@@ -42,7 +42,7 @@ describe('PriorityQueue', () => {
     });
 
     it('should peek top item', () => {
-        const result = new PriorityQueue(testData.queueItemArray);
+        const result = new PriorityQueue(testData.getQueueItemArray());
         let peek = result.peek();
         expect(peek.value).to.equal(1);
         peek = result.peek();
