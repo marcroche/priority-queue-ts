@@ -51,8 +51,8 @@ describe('PriorityQueue', () => {
 
     it('should push items onto queue', () => {
         const result = new PriorityQueue();
-        let obj5 = { value: 5, label: 'five'};
-        let obj1 = { value: 1, label: 'one'};
+        let obj5 = { value: 5, label: 'five' };
+        let obj1 = { value: 1, label: 'one' };
 
         result.push(new QueueItem(obj5.value, obj5));
         let peek = result.peek();
@@ -68,5 +68,21 @@ describe('PriorityQueue', () => {
         expect(result.isEmpty()).to.equal(false);
         result.clear();
         expect(result.isEmpty()).to.equal(true);
+    });
+
+    it('should give a dump of queue items', () => {
+        const result = new PriorityQueue();
+        let obj = { value: 1, label: 'object' };
+        result.push(new QueueItem(obj.value, obj));
+
+        let dump = result.dump();
+        expect(result.dump())
+            .to.
+            equal('0: {\"value\":1,\"item\":{\"value\":1,\"label\":\"object\"},\"heapIndex\":0}');
+
+        result.pop();
+        expect(result.dump())
+            .to.
+            equal('');
     });
 });
