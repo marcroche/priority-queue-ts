@@ -41,12 +41,24 @@ describe('PriorityQueue', () => {
         expect(pop.value).to.equal(5);
     });
 
+    it('should pop undefined when no items', () => {
+        const result = new PriorityQueue();
+        let pop = result.pop();
+        expect(pop).to.equal(undefined);
+    });
+
     it('should peek top item', () => {
         const result = new PriorityQueue(testData.getQueueItemArray());
         let peek = result.peek();
         expect(peek.value).to.equal(1);
         peek = result.peek();
         expect(peek.value).to.equal(1);
+    });
+
+    it('should peek undefined when no items', () => {
+        const result = new PriorityQueue();
+        let peek = result.peek();
+        expect(peek).to.equal(undefined);
     });
 
     it('should push items onto queue', () => {

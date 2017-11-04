@@ -14,14 +14,16 @@ export class PriorityQueue {
 
     public peek() {
         if (this.items.length < 1) {
-            throw 'peek(): Heap has no elements';
+            return undefined;
+            // throw 'peek(): Heap has no elements';
         }
         return this.items[0];
     }
 
     public pop() {
         if (this.items.length < 1) {
-            throw 'pop(): Heap has no elements';
+            return undefined;
+            // throw 'pop(): Heap has no elements';
         }
 
         let min = this.items[0];
