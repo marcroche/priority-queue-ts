@@ -1,8 +1,5 @@
 # priority-queue-ts
 
-[![Test coverage][coveralls-image]][coveralls-url]
-[![Coverage Status][coveralls-image]][coveralls-url]
-
 <p align="center">
   <a href="https://travis-ci.org/marcroche/priority-queue-ts">
     <img src="https://api.travis-ci.org/marcroche/priority-queue-ts.svg?branch=master"
@@ -12,6 +9,7 @@
     <img src="https://img.shields.io/npm/v/priority-queue-ts.svg"
          alt="npm version">
   </a>
+  [![Test coverage][coveralls-image]][coveralls-url]
   <a href="https://github.com/marcroche/priority-queue-ts/blob/master/LICENSE.md">
     <img src="https://img.shields.io/npm/l/priority-queue-ts.svg"
          alt="license">
