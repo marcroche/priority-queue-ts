@@ -103,9 +103,9 @@ export class PriorityQueue {
         }
     }
 
-    private decreaseKey(i: any, key: any) {
-        this.heapDecreaseKey(this.items, i, key);
-    }
+    // private decreaseKey(i: any, key: any) {
+    //     this.heapDecreaseKey(this.items, i, key);
+    // }
 
     private heapDecreaseKey(A: any, i: any, key: any) {
         while (i > 0 && (<QueueItem>A[this.parent(i)]).value > (<QueueItem>A[i]).value) {
