@@ -19,4 +19,11 @@ describe('PriorityQueue', () => {
         const result = new PriorityQueue();
         expect(result.isEmpty()).to.equal(true);
     });
+
+    it('should clear items', () => {
+        const result = new PriorityQueue(testData.queueItemArray);
+        expect(result.isEmpty()).to.equal(false);
+        result.clear();
+        expect(result.isEmpty()).to.equal(true);
+    });
 });
