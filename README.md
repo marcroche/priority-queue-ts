@@ -1,6 +1,3 @@
-[![Build Status](https://travis-ci.org/marcroche/priority-queue-ts.svg?branch=master)](https://travis-ci.org/marcroche/priority-queue-ts)
-
-
 # priority-queue-ts
 
 <p align="center">
