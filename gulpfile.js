@@ -7,6 +7,7 @@ let sourcemaps = require('gulp-sourcemaps');
 let path = require('path');
 let mocha = require('gulp-mocha');
 let tsConfig = require('./tsconfig.json');
+let coveralls = require('gulp-coveralls');
 
 let paths = {
   dist: 'dist/',
