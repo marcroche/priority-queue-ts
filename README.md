@@ -1,5 +1,8 @@
 # priority-queue-ts
 
+[![Test coverage][coveralls-image]][coveralls-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
+
 <p align="center">
   <a href="https://travis-ci.org/marcroche/priority-queue-ts">
     <img src="https://api.travis-ci.org/marcroche/priority-queue-ts.svg?branch=master"
@@ -39,3 +42,7 @@ TODO
 ## Licence
 
 MIT
+
+
+[coveralls-image]: https://img.shields.io/coveralls/marcroche/priority-queue-ts.svg?style=flat
+[coveralls-url]: https://coveralls.io/r/marcroche/priority-queue-ts?branch=master
