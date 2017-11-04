@@ -1,5 +1,6 @@
 import * as _ from 'lodash';
 import { QueueItem } from './queueItem';
+import * as queueType from './queueType';
 
 export class PriorityQueue {
     private items = Array<QueueItem>();
@@ -50,9 +51,9 @@ export class PriorityQueue {
         return this.items.length === 0;
     }
 
-    public contains(key: any) {
-        return _.find(this.items, {key: key}) !== undefined;  
-    }
+    // public contains(key: any) {
+    //     return _.find(this.items, {key: key}) !== undefined;  
+    // }
 
     public clear() {
         this.items = [];

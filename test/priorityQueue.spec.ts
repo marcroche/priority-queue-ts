@@ -48,4 +48,18 @@ describe('PriorityQueue', () => {
         peek = result.peek();
         expect(peek.value).to.equal(1);
     });
+
+    it('should push items onto queue', () => {
+        const result = new PriorityQueue();
+        let obj5 = { value: 5, label: 'five'};
+        let obj1 = { value: 1, label: 'one'};
+
+        result.push(new QueueItem(obj5.value, obj5));
+        let peek = result.peek();
+        expect(peek.value).to.equal(5);
+        
+        result.push(new QueueItem(obj1.value, obj1));
+        peek = result.peek();
+        expect(peek.value).to.equal(1);
+    });
 });
