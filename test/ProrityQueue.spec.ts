@@ -26,4 +26,18 @@ describe('PriorityQueue', () => {
         result.clear();
         expect(result.isEmpty()).to.equal(true);
     });
+
+    it('should pop items', () => {
+        const result = new PriorityQueue(testData.queueItemArray);
+        let pop = result.pop();
+        expect(pop.value).to.equal(1);
+        pop = result.pop();
+        expect(pop.value).to.equal(2);
+        pop = result.pop();
+        expect(pop.value).to.equal(3);
+        pop = result.pop();
+        expect(pop.value).to.equal(4);
+        pop = result.pop();
+        expect(pop.value).to.equal(5);
+    });
 });
