@@ -4,7 +4,7 @@
   "description": "JavaScript based priority queue",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -r ts-node/register test/**/helloTest.ts"
+    "test": "gulp tsc"
   },
   "author": "Marc Roche",
   "license": "MIT",

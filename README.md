@@ -1,6 +1,22 @@
 [![Build Status](https://travis-ci.org/marcroche/priority-queue-ts.svg?branch=master)](https://travis-ci.org/marcroche/priority-queue-ts)
 
+
 # priority-queue-ts
+
+<p align="center">
+  <a href="https://travis-ci.org/marcroche/priority-queue-ts">
+    <img src="https://api.travis-ci.org/marcroche/priority-queue-ts.svg?branch=master"
+         alt="build status">
+  </a>
+  <a href="https://www.npmjs.com/package/priority-queue-ts">
+    <img src="https://img.shields.io/npm/v/priority-queue-ts.svg"
+         alt="npm version">
+  </a>
+  <a href="https://github.com/marcroche/priority-queue-ts/blob/master/LICENSE.md">
+    <img src="https://img.shields.io/npm/l/priority-queue-ts.svg"
+         alt="license">
+  </a>
+</p>
 
 A simple priority queue data structure for Node.js and the browser written in TypeScript.
 
