@@ -14,7 +14,7 @@
          alt="code coverage">
   </a>
   <a href="https://npmjs.org/package/priority-queue-ts">
-    <img src="https://img.shields.io/npm/marcroche/priority-queue-ts.svg?style=flat"
+    <img src="https://img.shields.io/npm/dm/priority-queue-ts.svg?style=flat"
          alt="code coverage">
   </a>
   <a href="https://github.com/marcroche/priority-queue-ts/blob/master/LICENSE.md">
