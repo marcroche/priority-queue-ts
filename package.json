@@ -1,13 +1,14 @@
 {
     "name": "priority-queue-ts",
-    "version": "0.2.1",
+    "version": "0.2.3",
     "description": "JavaScript based priority queue",
-    "main": "index.js",
     "scripts": {
         "test": "nyc mocha"
     },
     "author": "Marc Roche",
     "license": "MIT",
+    "main": "dist/priorityQueue.js",
+    "types": "dist/@types/priorityQueue.d.ts",
     "devDependencies": {
         "@types/chai": "^4.0.4",
         "@types/lodash": "^4.14.80",
