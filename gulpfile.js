@@ -8,8 +8,11 @@ let sourcemaps = require('gulp-sourcemaps');
 let path = require('path');
 let mocha = require('gulp-mocha');
 let tsConfig = require('./tsconfig.json');
-let coveralls = require('gulp-coveralls');
-let istanbul = require('gulp-istanbul');
+// let coveralls = require('gulp-coveralls');
+// let istanbul = require('gulp-istanbul');
+var flatten = require('gulp-flatten');
+var rename = require('gulp-rename');
+var concat = require('gulp-concat');
 
 let paths = {
     dist: 'dist/',
@@ -18,29 +21,17 @@ let paths = {
 gulp.task('clean', () => {
     return del([
         paths.dist
-    ]).then(path => {
-        console.log('Deleted files and folders:\n', path.join('\n'));
-    });
+    ]);
 });
 
-gulp.task('tsc', ['tslint', 'clean', 'unit'], () => {
+gulp.task('tsc', ['typedefinitions', 'unit', 'tslint'], () => {
     return gulp.src([
         'src/**/*.ts',
         '!src/**/*.spec.ts'
     ])
         .pipe(sourcemaps.init())
         .pipe(typescript(tsConfig.compilerOptions)).js
-        .pipe(sourcemaps.write('maps'))
-        .pipe(gulp.dest(path.join(paths.dist, '')));
-});
-
-gulp.task('tsc-no-unit', ['tslint', 'clean'], () => {
-    return gulp.src([
-        'src/**/*.ts',
-        '!src/**/*.spec.ts'
-    ])
-        .pipe(sourcemaps.init())
-        .pipe(typescript(tsConfig.compilerOptions)).js
+        .pipe(concat('index.js'))
         .pipe(sourcemaps.write('maps'))
         .pipe(gulp.dest(path.join(paths.dist, '')));
 });
@@ -55,24 +46,24 @@ gulp.task('tslint', ['clean'], () => {
         .pipe(gulpTsLint.report());
 });
 
-gulp.task('unit', function () {
+gulp.task('unit', ['tslint', 'clean'], function () {
     return gulp.src('test/*.spec.ts')
         .pipe(mocha({
             reporter: 'nyan',
             require: ['ts-node/register']
         }));
-        // .pipe(istanbul.writeReports());
 });
 
-gulp.task('pre-unit', function () {
-    return gulp.src('test/**/*.spec.ts')
-        .pipe(istanbul())
-        .pipe(istanbul.hookRequire());
-});
+// gulp.task('coverage', function () {
+//     return gulp.src('coverage/lcov.info')
+//         .pipe(coveralls());
+// });
 
-gulp.task('coverage', function () {
-    return gulp.src('coverage/lcov.info')
-        .pipe(coveralls());
+gulp.task('typedefinitions', ['clean', 'tslint', 'unit'], () => {
+    return gulp.src('src/**/*.d.ts')
+        .pipe(flatten())
+        .pipe(rename('index.d.ts'))
+        .pipe(gulp.dest(paths.dist));
 });
 
 gulp.task('default', ['tsc']);
