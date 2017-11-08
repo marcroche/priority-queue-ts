@@ -8,11 +8,12 @@ let sourcemaps = require('gulp-sourcemaps');
 let path = require('path');
 let mocha = require('gulp-mocha');
 let tsConfig = require('./tsconfig.json');
-// let coveralls = require('gulp-coveralls');
-// let istanbul = require('gulp-istanbul');
 var flatten = require('gulp-flatten');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
+var source = require('vinyl-source-stream');
+var uglify = require('gulp-uglify');
+var buffer = require('vinyl-buffer');
 
 let paths = {
     dist: 'dist/',
@@ -31,8 +32,9 @@ gulp.task('tsc', ['typedefinitions', 'unit', 'tslint'], () => {
     ])
         .pipe(sourcemaps.init())
         .pipe(typescript(tsConfig.compilerOptions)).js
-        .pipe(concat('index.js'))
-        .pipe(sourcemaps.write('maps'))
+        .pipe(concat('index.min.js'))
+        .pipe(uglify())
+        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(path.join(paths.dist, '')));
 });
 
@@ -54,16 +56,20 @@ gulp.task('unit', ['tslint', 'clean'], function () {
         }));
 });
 
-// gulp.task('coverage', function () {
-//     return gulp.src('coverage/lcov.info')
-//         .pipe(coveralls());
-// });
-
 gulp.task('typedefinitions', ['clean', 'tslint', 'unit'], () => {
     return gulp.src('src/**/*.d.ts')
         .pipe(flatten())
         .pipe(rename('index.d.ts'))
         .pipe(gulp.dest(paths.dist));
+});
+
+gulp.task('uglify', ['tsc'], () => {
+    return gulp.src('dist/index.js')
+        .pipe(buffer())
+        .pipe(sourcemaps.init({loadMaps: true}))
+        .pipe(uglify())
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest("build"));
 });
 
 gulp.task('default', ['tsc']);
