@@ -1,4 +1,4 @@
-import { PriorityQueue } from '../src/PriorityQueue';
+import { PriorityQueue } from '../src/priorityQueue';
 import { QueueItem } from '../src/queueItem';
 import * as testData from './testData';
 import { expect } from 'chai';
