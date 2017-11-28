@@ -45,7 +45,10 @@ https://github.com/marcroche/priority-queue-ts/releases) section.
 ## Example
 
 ```ts
-import { PriorityQueue, QueueType, QueueItem } from 'priority-queue-ts';
+import { 
+    PriorityQueue, 
+    QueueType, 
+    QueueItem } from 'priority-queue-ts';
 
 let item = {
     value: 1, label: 'one'
