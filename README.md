@@ -1,5 +1,11 @@
 # priority-queue-ts
 
+[![NPM version][npm-image]][npm-url]
+[![NPM downloads][downloads-image]][downloads-url]
+[![Build status][travis-image]][travis-url]
+[![Test coverage][coveralls-image]][coveralls-url]
+[![License][license-image]][license-url]
+
 <p align="center">
   <a href="https://travis-ci.org/marcroche/priority-queue-ts">
     <img src="https://api.travis-ci.org/marcroche/priority-queue-ts.svg?branch=master"
@@ -63,18 +69,6 @@ queue.push(new QueueItem(item.value, item));
 
 MIT
 
-
-[coveralls-image]: https://img.shields.io/coveralls/marcroche/priority-queue-ts.svg?style=flat
-[coveralls-url]: https://coveralls.io/r/marcroche/priority-queue-ts?branch=master
-
-[![NPM version][npm-image]][npm-url]
-[![NPM downloads][downloads-image]][downloads-url]
-[![Build status][travis-image]][travis-url]
-[![Test coverage][coveralls-image]][coveralls-url]
-[![Coverage Status][coveralls-image]][coveralls-url]
-[![Greenkeeper badge](https://badges.greenkeeper.io/TypeStrong/ts-node.svg)](https://greenkeeper.io/)
-
-
 [npm-image]: https://img.shields.io/npm/v/priority-queue-ts.svg?style=flat
 [npm-url]: https://npmjs.org/package/priority-queue-ts
 [downloads-image]: https://img.shields.io/npm/dm/priority-queue-ts.svg?style=flat
@@ -83,3 +77,5 @@ MIT
 [travis-url]: https://travis-ci.org/marcroche/priority-queue-ts
 [coveralls-image]: https://img.shields.io/coveralls/marcroche/priority-queue-ts.svg?style=flat
 [coveralls-url]: https://coveralls.io/r/marcroche/priority-queue-ts?branch=master
+[license-image]: https://img.shields.io/npm/l/priority-queue-ts.svg
+[license-url]: https://github.com/marcroche/priority-queue-ts/blob/master/LICENSE.md
