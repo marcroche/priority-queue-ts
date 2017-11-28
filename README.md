@@ -47,9 +47,13 @@ https://github.com/marcroche/priority-queue-ts/releases) section.
 ```ts
 import { PriorityQueue, QueueType, QueueItem } from 'priority-queue-ts';
 
+let item = {
+    value: 1, label: 'one'
+};
+
 let queue = new PriorityQueue(QueueType.Min);
 
-queue.push({ cash: 250, name: 'Valentina' });
+queue.push((new QueueItem(item.value, item));
 ```
 
 ## Licence
@@ -57,5 +61,22 @@ queue.push({ cash: 250, name: 'Valentina' });
 MIT
 
 
+[coveralls-image]: https://img.shields.io/coveralls/marcroche/priority-queue-ts.svg?style=flat
+[coveralls-url]: https://coveralls.io/r/marcroche/priority-queue-ts?branch=master
+
+[![NPM version][npm-image]][npm-url]
+[![NPM downloads][downloads-image]][downloads-url]
+[![Build status][travis-image]][travis-url]
+[![Test coverage][coveralls-image]][coveralls-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
+[![Greenkeeper badge](https://badges.greenkeeper.io/TypeStrong/ts-node.svg)](https://greenkeeper.io/)
+
+
+[npm-image]: https://img.shields.io/npm/v/ts-node.svg?style=flat
+[npm-url]: https://npmjs.org/package/ts-node
+[downloads-image]: https://img.shields.io/npm/dm/ts-node.svg?style=flat
+[downloads-url]: https://npmjs.org/package/ts-node
+[travis-image]: https://img.shields.io/travis/TypeStrong/ts-node.svg?style=flat
+[travis-url]: https://travis-ci.org/TypeStrong/ts-node
 [coveralls-image]: https://img.shields.io/coveralls/marcroche/priority-queue-ts.svg?style=flat
 [coveralls-url]: https://coveralls.io/r/marcroche/priority-queue-ts?branch=master
