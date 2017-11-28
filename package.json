@@ -1,6 +1,6 @@
 {
   "name": "priority-queue-ts",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "JavaScript based priority queue",
   "scripts": {
     "test": "nyc mocha"
