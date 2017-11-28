@@ -42,7 +42,15 @@ $ npm install priority-queue-ts
 If you just want a pre-built file for using in the web, check the [releases](
 https://github.com/marcroche/priority-queue-ts/releases) section.
 
-TODO
+## Example
+
+```ts
+import { PriorityQueue, QueueType, QueueItem } from 'priority-queue-ts';
+
+let queue = new PriorityQueue(QueueType.Min);
+
+queue.push({ cash: 250, name: 'Valentina' });
+```
 
 ## Licence
 

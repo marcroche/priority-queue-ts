@@ -16,7 +16,6 @@
     "suppressImplicitAnyIndexErrors": true,
     "types": [
       "node",
-      "systemjs",
       "lodash"
     ]
   },

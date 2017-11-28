@@ -63,13 +63,4 @@ gulp.task('typedefinitions', ['clean', 'tslint', 'unit'], () => {
         .pipe(gulp.dest(paths.dist));
 });
 
-gulp.task('uglify', ['tsc'], () => {
-    return gulp.src('dist/index.js')
-        .pipe(buffer())
-        .pipe(sourcemaps.init({loadMaps: true}))
-        .pipe(uglify())
-        .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest("build"));
-});
-
 gulp.task('default', ['tsc']);
