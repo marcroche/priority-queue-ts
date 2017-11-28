@@ -75,11 +75,11 @@ MIT
 [![Greenkeeper badge](https://badges.greenkeeper.io/TypeStrong/ts-node.svg)](https://greenkeeper.io/)
 
 
-[npm-image]: https://img.shields.io/npm/v/ts-node.svg?style=flat
-[npm-url]: https://npmjs.org/package/ts-node
-[downloads-image]: https://img.shields.io/npm/dm/ts-node.svg?style=flat
-[downloads-url]: https://npmjs.org/package/ts-node
-[travis-image]: https://img.shields.io/travis/TypeStrong/ts-node.svg?style=flat
-[travis-url]: https://travis-ci.org/TypeStrong/ts-node
+[npm-image]: https://img.shields.io/npm/v/priority-queue-ts.svg?style=flat
+[npm-url]: https://npmjs.org/package/priority-queue-ts
+[downloads-image]: https://img.shields.io/npm/dm/priority-queue-ts.svg?style=flat
+[downloads-url]: https://npmjs.org/package/priority-queue-ts
+[travis-image]: https://img.shields.io/travis/marcroche/priority-queue-ts.svg?style=flat
+[travis-url]: https://travis-ci.org/marcroche/priority-queue-ts
 [coveralls-image]: https://img.shields.io/coveralls/marcroche/priority-queue-ts.svg?style=flat
 [coveralls-url]: https://coveralls.io/r/marcroche/priority-queue-ts?branch=master
