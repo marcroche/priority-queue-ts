@@ -53,7 +53,7 @@ let item = {
 
 let queue = new PriorityQueue(QueueType.Min);
 
-queue.push((new QueueItem(item.value, item));
+queue.push(new QueueItem(item.value, item));
 ```
 
 ## Licence
