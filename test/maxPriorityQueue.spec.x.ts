@@ -1,100 +1,101 @@
-import { MinPriorityQueue } from '../src/minPriorityQueue';
+import { PriorityQueue } from '../src/priorityQueue';
 import { QueueItem } from '../src/queueItem';
+import { QueueType } from '../src/queueType';
 import * as testData from './testData';
 import { expect } from 'chai';
 import 'mocha';
 
-describe('Min-PriorityQueue', () => {
-    it('should create a PriorityQueue', () => {
-        const result = new MinPriorityQueue([{ 
-            value: 0,  
-            heapIndex: 0,
-            id: '0'
+describe('Max-PriorityQueue', () => {
+    it('should create a Max PriorityQueue', () => {
+        const result = new PriorityQueue(QueueType.Max, [{ 
+            value: 0, 
+            item: {}, 
+            heapIndex: 0 
         }]);
         expect(typeof result).to.equal('object');
     });
 
     it('should not be empty when creating with array', () => {
-        const result = new MinPriorityQueue(testData.getQueueItemArray());
+        const result = new PriorityQueue(QueueType.Max, testData.getQueueItemArray());
         expect(result.isEmpty()).to.equal(false);
     });
 
     it('should be empty when creating with empty constructor', () => {
-        const result = new MinPriorityQueue();
+        const result = new PriorityQueue();
         expect(result.isEmpty()).to.equal(true);
     });
 
     it('should clear items', () => {
-        const result = new MinPriorityQueue(testData.getQueueItemArray());
+        const result = new PriorityQueue(QueueType.Max, testData.getQueueItemArray());
         expect(result.isEmpty()).to.equal(false);
         result.clear();
         expect(result.isEmpty()).to.equal(true);
     });
 
     it('should pop items', () => {
-        const result = new MinPriorityQueue(testData.getQueueItemArray());
+        const result = new PriorityQueue(QueueType.Max, testData.getQueueItemArray());
         let pop = result.pop();
-        expect(pop.value).to.equal(1);
-        pop = result.pop();
-        expect(pop.value).to.equal(2);
-        pop = result.pop();
-        expect(pop.value).to.equal(3);
+        expect(pop.value).to.equal(5);
         pop = result.pop();
         expect(pop.value).to.equal(4);
         pop = result.pop();
-        expect(pop.value).to.equal(5);
+        expect(pop.value).to.equal(3);
+        pop = result.pop();
+        expect(pop.value).to.equal(2);
+        pop = result.pop();
+        expect(pop.value).to.equal(1);
     });
 
     it('should pop undefined when no items', () => {
-        const result = new MinPriorityQueue();
+        const result = new PriorityQueue();
         let pop = result.pop();
         expect(pop).to.equal(undefined);
     });
 
     it('should peek top item', () => {
-        const result = new MinPriorityQueue(testData.getQueueItemArray());
+        const result = new PriorityQueue(QueueType.Max, testData.getQueueItemArray());
         let peek = result.peek();
-        expect(peek.value).to.equal(1);
+        expect(peek.value).to.equal(5);
         peek = result.peek();
-        expect(peek.value).to.equal(1);
+        expect(peek.value).to.equal(5);
     });
 
     it('should peek undefined when no items', () => {
-        const result = new MinPriorityQueue();
+        const result = new PriorityQueue();
         let peek = result.peek();
         expect(peek).to.equal(undefined);
     });
 
     it('should push items onto queue', () => {
-        const result = new MinPriorityQueue();
-        let obj5 = { value: 5, label: 'five', heapIndex: 0, id: '5' };
-        let obj1 = { value: 1, label: 'one', heapIndex: 0, id: '1' };
+        const result = new PriorityQueue();
+        let obj5 = { value: 5, label: 'five' };
+        let obj1 = { value: 1, label: 'one' };
 
-        result.push(obj5);
+        result.push(new QueueItem(obj5.value, obj5));
         let peek = result.peek();
         expect(peek.value).to.equal(5);
 
-        result.push(obj1);
+        result.push(new QueueItem(obj1.value, obj1));
         peek = result.peek();
-        expect(peek.value).to.equal(1);
+        expect(peek.value).to.equal(5);
     });
 
     it('should clear queue', () => {
-        const result = new MinPriorityQueue(testData.getQueueItemArray());
+        const result = new PriorityQueue(QueueType.Max, testData.getQueueItemArray());
         expect(result.isEmpty()).to.equal(false);
         result.clear();
         expect(result.isEmpty()).to.equal(true);
     });
 
     it('should give a dump of queue items', () => {
-        const result = new MinPriorityQueue();
-        let obj = { value: 1, label: 'object', heapIndex: 0, id: '1' };
-        result.push(obj);
+        const result = new PriorityQueue();
+        let obj = { value: 1, label: 'object' };
+        result.push(new QueueItem(obj.value, obj));
 
         let dump = result.dump();
         expect(result.dump())
             .to.
-            equal('0: {\"value\":1,\"label\":\"object\",\"heapIndex\":0,\"id\":\"1\"}');
+            equal('0: {\"value\":1,\"item\":{\"value\":1,\"label\":\"object\"},\"heapIndex\":0}');
 
         result.pop();
         expect(result.dump())

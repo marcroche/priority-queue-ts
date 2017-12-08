@@ -10,12 +10,6 @@ A simple priority queue data structure for Node.js and the browser written in Ty
 
 ## Installation
 
-As component for the browser:
-
-```
-$ component install marcroche/priority-queue-ts
-```
-
 As npm for Node.js:
 
 ```
@@ -29,17 +23,20 @@ https://github.com/marcroche/priority-queue-ts/releases) section.
 
 ```ts
 import { 
-    PriorityQueue, 
-    QueueType, 
+    MinPriorityQueue,
+    MaxPriorityQueue, 
     QueueItem } from 'priority-queue-ts';
 
-let item = {
-    value: 1, label: 'one'
-};
+class Item extends QueueItem {
+    public value = 1;
+    public label = 'one';
+}
 
-let queue = new PriorityQueue(QueueType.Min);
+let queue = new MinPriorityQueue();
 
-queue.push(new QueueItem(item.value, item));
+let item = new Item();
+
+queue.push(item);
 ```
 
 ## Licence
@@ -55,4 +52,4 @@ MIT
 [coveralls-image]: https://img.shields.io/coveralls/marcroche/priority-queue-ts.svg?style=flat
 [coveralls-url]: https://coveralls.io/r/marcroche/priority-queue-ts?branch=master
 [license-image]: https://img.shields.io/npm/l/priority-queue-ts.svg
-[license-url]: https://github.com/marcroche/priority-queue-ts/blob/master/LICENSE.md
+[license-url]: https://github.com/marcroche/priority-queue-ts/blob/master/LICENSE
