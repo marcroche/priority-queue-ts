@@ -59,6 +59,10 @@ export abstract class QueueBase {
     public clear() {
         this.items = [];
     }
+    
+    public size() {
+        return this.items.length;
+    }
 
     protected abstract heapify(A: Array<QueueItem>, i: number, size: number): void;
     
